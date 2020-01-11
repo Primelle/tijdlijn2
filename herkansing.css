@@ -1,0 +1,609 @@
+	*{
+		margin:0;
+	}
+
+	body{
+		margin-left: 2%;
+		margin-right:2%;
+	}
+
+
+/*Opmaak tekst*/
+
+	h1, h2, h3{
+		font-family: 'Teko';
+	}
+
+	p{
+		font-family: 'KoHo';
+		font-size: 8px;
+	}
+
+	h2{
+		font-size: 13px;
+		text-transform: uppercase;
+	}
+
+	h3{
+		font-size: 10px;
+	}
+
+	header{
+		text-align: center;
+		/*margin-bottom: 40px;*/
+	}
+
+	header>h1{
+		color: #122E6B;
+		font-size:35px;
+		margin-bottom:0;
+	}
+
+	#woo{
+		color: #ED1961;
+	}
+
+	header>p{
+		font-style: italic;
+		font-weight: bold;
+		font-size: 13px;
+		margin-top:-12px;
+		color:#4D4D4D;
+	}
+
+/*Einde opmaak tekst*/	
+
+
+/*Opmaak box*/
+	.container{
+		margin-left:75px;
+		max-width:75%;
+		background-color: #EDE5ED;
+		border: 0.2px solid #9C9CAC;
+		margin-top: 40px;
+	}
+
+
+	.artiesten{
+		background-color: white;
+		float:right;
+		border-right: 0.2px solid #9C9CAC;
+		width:60px;
+		text-align: center;
+		display: block;
+		clear: both;
+		margin-top:10px;
+		color:#4D4D4D;
+	}
+
+	.raesremmurd>.artiesten , .trippieredd>.artiesten , .travisscott>.artiesten , .placesfaces>.artiesten{
+		width:78px;
+	}
+
+	.tijden{
+		background-color: white;
+		width:60px;
+		float:left;
+		display: block;
+		clear: both;
+		color:#4D4D4D;
+		border-top:0.2px solid #9C9CAC;
+		border-left:0.2px solid #9C9CAC;
+
+
+		/*position: relative;
+		left:140px;
+		margin:0;
+		text-align:center;*/
+	}
+
+	.tekst{
+		clear: both;
+		padding:10px;
+	}
+
+/*Einde opmaak box*/
+
+
+/*De tijdlijn*/
+
+	.timeline{
+		position: relative;
+	}
+
+	.timeline:after {
+		content: '';
+		position: absolute;
+		width: 10px;
+		background-color: #757596;
+		margin-top:20px;
+		top: 0;
+		bottom: 0;
+		left:36px;
+		/*margin-left: -3px;*/
+	}	
+
+/*einde*/
+
+
+  /* The circles on the timeline 
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+*/
+
+	.container:after{
+	    content:'';
+	    width:25px;
+	    height:25px;
+	    border-radius: 50%;
+	    border: 2px solid #ffffff;
+	    background-color:#9C9CAC;
+	    position: absolute;
+	   	margin-top:-120px;
+	   	/*top:30px;*/
+	    z-index:9;
+	    margin-left:-49px;
+	  }
+
+
+/*flexbox toepassen*/
+	.timeline{
+		display: flex;
+		flex-direction: column;
+	}
+/*einde*/
+
+
+@media only screen and (min-width:600px) and (max-width:999px){
+	p{
+		font-size: 12px;
+	}
+
+	h2{
+		font-size: 22px;
+	}
+
+	h3{
+		font-size: 14px;
+	}
+
+	header>h1{
+		font-size:45px;
+	}
+
+	header>p{
+		font-size: 16px;
+	}
+
+	.timeline:after {
+  		width: 20px;
+		margin-top:35px;
+	}
+
+	.container{
+		width:35%;
+		margin-top:70px;
+	}
+
+	.container:nth-child(odd){
+		margin-right:40%;
+		margin-top:50px;
+	}
+	
+	.container:nth-child(even){
+		margin-left:60%;
+		margin-top:-100px;
+	}
+
+	.artiesten{
+		width:100px;
+	}
+
+	.raesremmurd>.artiesten , .trippieredd>.artiesten , .travisscott>.artiesten , .placesfaces>.artiesten{
+		width:130px;
+	}
+
+	.amine>.artiesten{
+		width:70px;
+	}
+
+	.tijden{
+		width:80px;
+	}
+
+	/*cirkel*/
+
+	.container:after{
+		width:40px;
+	    height:40px;
+	    left:55%;
+	    border: 4px solid #ffffff;
+	}
+
+	
+	.container:nth-child(odd):after{
+	   	margin-top:-190px;
+	   	/*top:170px;*/
+
+	}
+
+
+	.container:nth-child(even):after{
+	    margin-top:-150px;
+	}
+
+/*einde cirkel */	
+
+
+}
+
+@media only screen and (min-width:600px){
+	
+	.timeline{
+		justify-content: flex-start;
+		flex-flow:row wrap;
+	}
+
+	.timeline:after {
+		top: 0;
+		bottom: 0;
+		left:50%;
+	}
+
+	.container:nth-child(odd) .artiesten{
+		float:left;
+	}
+
+	.container:nth-child(even) .artiesten{
+  		float:right;
+  	}
+
+	.container:nth-child(odd) .tijden{
+		float:right;
+	}
+
+	.container:nth-child(even) .tijden{
+  		float:left;
+  	}
+
+  	.container:nth-child(odd) .tijden{
+		border-right:0.2px solid #9C9CAC;
+		border-bottom:0.2px solid #9C9CAC;
+		border-left:none;
+		border-bottom:none;
+	}
+
+	.container:nth-child(odd) .artiesten{
+		border-left:0.2px solid #9C9CAC;
+		border-right:none;
+	}
+  	
+  }
+
+@media only screen and (min-width:1000px){
+  	.lilmosey , .riconasty , .sheckwes , .raesremmurd , .amine , .trippieredd , .travisscott , .placesfaces{
+	  	border: 0.2px solid #9C9CAC;
+	  	border-bottom: none;
+	  	background-repeat: no-repeat;
+  		background-size: cover;
+	  	height:40%;
+  	}
+
+  	.lilmosey{
+  		background-image: url('../coderen/afbeeldingen/moseyyy.jpg');
+  	}
+
+  	.riconasty{
+  		background-image: url('../coderen/afbeeldingen/riconasty.jpg');
+  	}
+
+  	.sheckwes{
+  		background-image: url('../coderen/afbeeldingen/sheckwes.jpg');
+  	}
+
+  	.raesremmurd{
+  		background-image: url('../coderen/afbeeldingen/raesremmurd.jpg');
+  	}
+
+  	.amine{
+  		background-image: url('../coderen/afbeeldingen/amine.jpg');
+  	}
+
+  	.trippieredd{
+  		background-image: url('../coderen/afbeeldingen/trippieredd.jpg');
+  	}
+
+  	.travisscott{
+  		background-image: url('../coderen/afbeeldingen/travisscott.jpg');
+  	}
+
+  	.placesfaces{
+  		background-image: url('../coderen/afbeeldingen/placesfaces.jpg');
+  	}
+  }
+
+
+@media only screen and (min-width:1000px) and (max-width:1500px){
+
+
+	p{
+		font-size: 15px;
+	}
+
+	h2{
+		font-size: 25px;
+	}
+
+	h3{
+		font-size: 18px;
+	}
+
+	header>h1{
+		font-size:50px;
+	}
+
+	header>p{
+		font-size: 18px;
+	}
+
+  	.container{
+  		min-width:20%;
+  		max-width: 30%;
+
+  		/*width:375px;
+
+  		/*min-width:400px;
+  		max-width:600px;
+  		min-height:500px;
+  	*/}
+
+  	.container:nth-of-type(5) , .container:nth-of-type(7){
+		height:325px;
+	}
+
+	.timeline:after {
+	  	width: 20px;
+		margin-top:35px;		
+	}
+
+	.container:after{
+		width:40px;
+	    height:40px;
+	    left:53%;
+	    border: 4px solid #ffffff;
+	}
+
+	.container:nth-child(odd){
+		margin-right:50%;
+		margin-top:50px;
+	}
+
+	.container:nth-child(even){
+		margin-left:58%;
+		margin-top:-100px;
+	}
+
+	.artiesten{
+		width:115px;
+		margin-top:124px;
+	}
+
+	.trippieredd>.artiesten , .travisscott>.artiesten {
+			width:130px;
+		}
+
+	.raesremmurd>.artiesten , .placesfaces>.artiesten{
+		width:150px;
+	}
+
+	.amine>.artiesten{
+		width: 70px;
+	}
+
+	.trippieredd > .artiesten{
+		margin-top:100px;
+	}
+
+	.sheckwes > .artiesten , .placesfaces > .artiesten{
+		margin-top:138px;
+	}
+
+
+	.amine>.artiesten , .travisscott>.artiesten{
+		margin-top:68px;
+	}
+
+	.tijden{
+		width: 95px;
+	}
+
+  }
+
+@media only screen and (min-width: 1501px){
+	
+	p{
+		font-size: 20px;
+	}
+
+	header>h1{
+		font-size:65px;
+	}
+
+	header>p{
+		font-size: 25px;
+	}
+
+	h2{
+		font-size: 35px;
+	}
+
+	h3{
+		font-size: 25px;
+	}
+
+	.container{
+		width:550px;
+	}
+
+	.tijden{
+		width:130px;
+	}
+
+	.artiesten{
+		width:165px;
+		margin-top:218px;
+	}
+
+	.lilmosey>.artiesten{
+		width:140px;
+	}
+
+	.amine>.artiesten{
+		width:100px;
+		margin-top:89px;
+	}
+
+	.trippieredd>.artiesten , .travisscott>.artiesten {
+		width:190px;
+	}
+
+	.raesremmurd>.artiesten , .placesfaces>.artiesten{
+		width:220px;
+	}
+
+  	.lilmosey , .riconasty , .sheckwes , .raesremmurd , .amine , .trippieredd , .travisscott , .placesfaces{
+	  	height:50%;
+  	}
+
+  	.riconasty>.artiesten{
+  		margin-top:220px;
+  	}
+
+  	.sheckwes>.artiesten , .placesfaces>.artiesten{
+  		margin-top:245px;
+  	}
+
+  	.raesremmurd>.artiesten{
+  		margin-top:218px;
+  	}
+
+  	.travisscott>.artiesten{
+  		margin-top:141px;
+  	}
+
+  	.trippieredd>.artiesten{
+  		margin-top: 168px;
+  	}
+
+	.container:nth-child(odd){
+		margin-right:40%;
+		margin-top:50px;
+	}
+		
+	.container:nth-child(even){
+		margin-left:60%;
+		margin-top:-100px;
+	}
+
+	.timeline:after {
+	  	width: 30px;
+		margin-top:50px;		
+	}
+
+	.container:after{
+		width:60px;
+	    height:60px;
+	    left:51.5%;
+	    border: 8px solid #ffffff;
+	}
+
+	/*
+
+	
+
+	
+/* 
+
+	
+
+	section{
+  		width:500px;
+  		height:500px;
+  	}
+
+  	
+
+  	.timeline:after {
+  		width: 25px;
+		margin-top:35px;
+	}
+
+	.container:after{
+		width:45px;
+	    height:45px;
+	    left:52.5%;
+	    border: 4px solid #ffffff;
+	}
+
+	/*.container{
+		min-width: 500px;
+		max-width:800px;
+		min-height:600px;
+		max-height: 1000px;
+	}*/
+
+	/*
+
+	.artiesten{
+		/*margin-top:159px;*/
+		/*--width:175px;
+		margin-top:212px;
+	}
+
+
+
+	.tekst{
+		padding:20px;
+	}
+	
+	.container{
+		flex:column nowrap;
+	}
+  }
+
+
+  /*.container{
+  		width:400px;
+  		height:500px;
+  	}
+
+
+telefoon: 375 tot 599px
+tablet: 600px tot 1000px
+laptop: 1000px tot 1799px
+grotere schermen: 1800px
+
+*/
+
+
+
+
+	
+
+
+
+
+
+
+
+
